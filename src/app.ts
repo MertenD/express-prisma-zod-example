@@ -1,15 +1,26 @@
 import express from "express";
+import swaggerUi from "swagger-ui-express"
 import { notFound } from "./middleware/notFound";
 import { errorHandler } from "./middleware/errorHandler";
-import postsRouter from "./modules/posts/post.controller";
+import postsRouter from "./modules/posts/posts.controller";
+import {generateOpenAPIDocument} from "./openapi/registry";
+import {loadOpenApiDefinitions} from "./openapi/loadOpenApi";
+
+// Load openapi definitions (*.openapi.ts files)
+loadOpenApiDefinitions()
 
 const app = express();
-
-// Body parser
 app.use(express.json());
 
-// Routes
+// -> Add routes here
 app.use("/api/posts", postsRouter);
+
+// Swagger
+const openApiDocument = generateOpenAPIDocument()
+app.use("/swagger", swaggerUi.serve, swaggerUi.setup(openApiDocument))
+app.use("/openapi.json", (req, res) => {
+    res.json(openApiDocument)
+})
 
 // 404 & Error-Handler
 app.use(notFound);

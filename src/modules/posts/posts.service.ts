@@ -1,4 +1,4 @@
-import { CreatePostInput } from "./post.schema";
+import { CreatePostInput } from "./posts.schema";
 import {prisma} from "../../db/prisma";
 
 export async function getPosts() {

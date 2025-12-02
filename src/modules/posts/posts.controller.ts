@@ -1,6 +1,6 @@
 import {Router} from "express";
-import {createPostSchema} from "./post.schema";
-import * as postService from "./post.service";
+import {createPostSchema} from "./posts.schema";
+import * as postService from "./posts.service";
 import {validateBody} from "../../middleware/validateRequest";
 
 const postsRouter = Router()
