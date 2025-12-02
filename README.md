@@ -6,6 +6,7 @@ A minimal but well-structured REST API starter using:
 - **TypeScript**
 - **Prisma** (with **PostgreSQL**)
 - **Zod** for request validation
+- **Swagger UI** for API documentation
 
 Example resource: `Post`  
 Endpoints:
