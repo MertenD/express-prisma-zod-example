@@ -107,6 +107,14 @@ http://localhost:3000
 
 (or whatever you set as `PORT` in `.env`)
 
+There will also be a swagger api documentation available at:
+
+```text
+http://localhost:3000/swagger
+# or the raw openapi json at:
+http://localhost:3000/openapi.json
+```
+
 ### 3.2 Build for production
 
 ```bash
