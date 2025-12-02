@@ -1,0 +1,12 @@
+/node_modules
+/.idea
+.vscode/
+*.iml
+build/
+
+/prisma/migrations
+/src/generated
+
+.env
+.env.*
+!.env.example
