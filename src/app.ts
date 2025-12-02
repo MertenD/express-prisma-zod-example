@@ -1,7 +1,7 @@
 import express from "express";
 import { notFound } from "./middleware/notFound";
 import { errorHandler } from "./middleware/errorHandler";
-import postRouter from "./modules/post/post.controller";
+import postsRouter from "./modules/posts/post.controller";
 
 const app = express();
 
@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 
 // Routes
-app.use("/api/posts", postRouter);
+app.use("/api/posts", postsRouter);
 
 // 404 & Error-Handler
 app.use(notFound);
