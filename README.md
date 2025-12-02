@@ -4,9 +4,19 @@ A minimal but well-structured REST API starter using:
 
 - **Node.js + Express**
 - **TypeScript**
-- **Prisma** (with **PostgreSQL**)
 - **Zod** for request validation
+- **Prisma** (with **PostgreSQL**)
 - **Swagger UI** for API documentation
+
+
+<p align="center">
+  <img src="logos/nodejs.svg" alt="Node.js" width="60" />
+  <img src="logos/express.svg" alt="Express" width="60" />
+  <img src="logos/typescript.svg" alt="Typescript" width="60" />
+  <img src="logos/zod.svg" alt="ZOD" width="60" />
+  <img src="logos/prisma.svg" alt="Prisma" width="60" />
+  <img src="logos/swagger.svg" alt="Logo 6" width="60" />
+</p>
 
 Example resource: `Post`  
 Endpoints:
