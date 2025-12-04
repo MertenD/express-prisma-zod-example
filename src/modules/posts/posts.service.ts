@@ -1,5 +1,5 @@
 import { CreatePostInput } from "./posts.schema";
-import {prisma} from "../../db/prisma";
+import prisma from "../../db/prisma";
 
 export async function getPosts() {
     return prisma.post.findMany({
