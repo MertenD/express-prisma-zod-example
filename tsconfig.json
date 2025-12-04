@@ -44,5 +44,6 @@
     "outDir": "./dist",
     "esModuleInterop": true,
   },
-  "include": ["src", "prisma.config.ts"]
+  "include": ["src", "prisma.config.ts"],
+  "exclude": ["src/**/*.test.ts"]
 }

@@ -118,15 +118,21 @@ http://localhost:3000/swagger
 http://localhost:3000/openapi.json
 ```
 
-### 3.2 Build for production
+### 3.2 Build for production with Docker
 
-```bash
-npm run build
-npm start
+In order build and run the API with docker you need a .env file that contains:
+
+```dotenv
+DATABASE_URL=postgresql://...
+PORT=3000
 ```
 
-* `npm run build` compiles TypeScript to `dist/`
-* `npm start` runs the compiled JavaScript
+Then you can build the docker image and run a docker container:
+
+```bash
+docker build -t <image name> .
+docker run -p 3000:3000 --env-file .env <container name> -d
+```
 
 ### 3.3 Run tests
 
