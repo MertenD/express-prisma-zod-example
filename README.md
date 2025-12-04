@@ -6,6 +6,7 @@ A minimal but well-structured REST API starter using:
 - **TypeScript**
 - **Zod** for request validation
 - **Prisma** (with **PostgreSQL**)
+- **Vitest** for testing
 - **Swagger UI** for API documentation
 
 
@@ -15,6 +16,7 @@ A minimal but well-structured REST API starter using:
   <img src="logos/typescript.svg" alt="Typescript" width="60" />
   <img src="logos/zod.svg" alt="ZOD" width="60" />
   <img src="logos/prisma.svg" alt="Prisma" width="60" />
+  <img src="logos/vitest.svg" alt="Vitest" width="60" />
   <img src="logos/swagger.svg" alt="Logo 6" width="60" />
 </p>
 
