@@ -1,5 +1,5 @@
 import {registry} from "../../openapi/registry";
-import {createPostSchema, PostSchema} from "./posts.schema";
+import {createPostSchema, postResponseSchema} from "./posts.schema";
 import {z} from "zod";
 
 // GET /api/posts
@@ -12,7 +12,7 @@ registry.registerPath({
             description: "List of all posts",
             content: {
                 "application/json": {
-                    schema: z.array(PostSchema)
+                    schema: z.array(postResponseSchema)
                 }
             }
         }
@@ -38,7 +38,7 @@ registry.registerPath({
             description: "The newly created post",
             content: {
                 "application/json": {
-                    schema: PostSchema
+                    schema: postResponseSchema
                 }
             }
         },

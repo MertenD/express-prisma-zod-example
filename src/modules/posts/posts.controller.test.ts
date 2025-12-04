@@ -16,6 +16,7 @@ vi.mock("../../db/prisma", () => {
 
 import prisma from "../../db/prisma"
 import {Post} from "../../generated/prisma/browser";
+import {PostDto, toPostDto, toPostDtoList} from "./posts.dto";
 
 describe("Posts routes", () => {
     const prismaMock = prisma as unknown as {
@@ -44,12 +45,10 @@ describe("Posts routes", () => {
 
         const res = await request(app).get("/api/posts")
 
-        const expected = mockPosts.map(post => ({
-            ...post,
-            createdAt: post.createdAt.toISOString()
-        }))
-
         expect(res.status).toBe(200)
+
+        const expected: PostDto[] = toPostDtoList(mockPosts)
+
         expect(res.body).toEqual(expected)
         expect(prismaMock.post.findMany).toHaveBeenCalledTimes(1)
     })
@@ -66,12 +65,10 @@ describe("Posts routes", () => {
 
         const res = await request(app).post("/api/posts").send(input).set("Content-Type", "application/json")
 
-        const expected = {
-            ...created,
-            createdAt: created.createdAt.toISOString()
-        }
-
         expect(res.status).toBe(201)
+
+        const expected: PostDto = toPostDto(created)
+
         expect(res.body).toEqual(expected)
         expect(prismaMock.post.create).toBeCalledWith({
             data: {

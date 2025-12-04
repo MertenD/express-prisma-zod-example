@@ -1,6 +1,6 @@
 import {z} from "zod";
 
-export const PostSchema = z.object({
+export const postResponseSchema = z.object({
     id: z.number().int(),
     title: z.string().min(3).openapi({ example: "My first post" }),
     content: z.string().nullable().optional().openapi({ example: "Hello World!" }),
