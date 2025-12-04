@@ -88,7 +88,8 @@ Defined in `package.json`:
     "build": "tsc",
     "start": "node dist/server.js",
     "prisma:migrate": "prisma migrate dev",
-    "prisma:generate": "prisma generate"
+    "prisma:generate": "prisma generate",
+    "test": "vitest"
   }
 }
 ```
@@ -125,6 +126,12 @@ npm start
 * `npm run build` compiles TypeScript to `dist/`
 * `npm start` runs the compiled JavaScript
 
+### 3.3 Run tests
+
+```bash
+npm run test
+```
+
 ---
 
 ## 4. Project Structure
@@ -143,10 +150,12 @@ src/
 │  └─ notFound.ts           # 404 handler
 ├─ modules/
 │  └─ posts/
-│     ├─ posts.schema.ts     # Zod schemas & types for Post
-│     ├─ posts.service.ts    # DB access / business logic
-│     ├─ posts.controller.ts # /api/posts router and usage of service functions
-|     └─ posts.openapi.ts    # Posts route openapi definitions
+│     ├─ posts.schema.ts          # Zod schemas & types for Posts
+│     ├─ posts.dto.ts             # DTO types based on schema and transform utils
+│     ├─ posts.service.ts         # DB access / business logic
+│     ├─ posts.controller.ts      # /api/posts router with input validation and usage of service functions
+|     ├─ posts.openapi.ts         # Posts route openapi definitions for swagger
+│     └─ posts.controller.test.ts # Tests for the endpoints
 ├─ openapi/
 │  ├─ loadOpenApi.ts        # load all openapi definitions in project
 |  ├─ registry.ts           # Openapi Metadata
